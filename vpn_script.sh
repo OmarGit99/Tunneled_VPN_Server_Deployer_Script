@@ -46,7 +46,7 @@ cert /etc/openvpn/server.crt
 key /etc/openvpn/server.key
 dh /etc/openvpn/dh.pem
 server 10.8.0.0 255.255.255.0
-push "redirect-gateway def1 bypass-dhcp"
+push "redirect-gateway local def1 bypass-dhcp"
 keepalive 10 120
 cipher AES-256-CBC
 user nobody
@@ -75,7 +75,7 @@ rm /tmp/ngrok.tgz
 
 
 echo "Authenticating ngrok..."
-ngrok authtoken #[Your authroken here]
+ngrok authtoken [AUTHTOKEN GOES HERE]
 
 echo "Starting ngrok to tunnel OpenVPN..."
 ngrok tcp 1194 &
@@ -105,6 +105,7 @@ key [inline]
 remote-cert-tls server
 cipher AES-256-CBC
 verb 3
+disable-dco
 EOF
 
 

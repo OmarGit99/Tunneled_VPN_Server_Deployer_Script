@@ -15,4 +15,6 @@ This project is a comprehensive implementation of a secure VPN tunnel using Open
 - Get AuthToken from NGROK and enter into script
 - Run script
 - Use the .ovpn client config file by importing it to your openvpn client
-- Do not expose serverside keys/certs 
+- Do not expose serverside keys/certs
+- Make sure to enable ip forwarding on server
+- Edit firewall rules as required
